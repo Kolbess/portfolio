@@ -1,92 +1,137 @@
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  position: relative;
+  overflow-x: hidden;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
+header {
+  background-color: #0d0d0d;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 1px solid #222;
+  position: relative;
+  z-index: 10;
+}
 
-    header {
-      background: #161616;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 2px solid #2f2f2f;
-    }
+header h1 {
+  font-size: 2.5rem;
+  color: #00ffa6;
+  margin: 0;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      color: #00ffa6;
-      letter-spacing: 1px;
-    }
+header p {
+  color: #bbb;
+  margin-top: 0.5rem;
+}
 
-    header p {
-      font-size: 1.1rem;
-      color: #aaa;
-    }
+section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
 
-    .container {
-      padding: 3rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+.section-title {
+  font-size: 2rem;
+  color: #00ffa6;
+  border-bottom: 2px solid #00ffa6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #00ffa6;
-      position: relative;
-    }
+.project {
+  background-color: #111;
+  padding: 1.5rem;
+  border-left: 4px solid #00ffa6;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .section-title::after {
-      content: '';
-      display: block;
-      height: 3px;
-      width: 60px;
-      background: #00ffa6;
-      margin-top: 0.5rem;
-    }
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 255, 166, 0.2);
+}
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+.project h3 {
+  margin: 0;
+  color: #00ffa6;
+  font-size: 1.5rem;
+}
 
-    .project {
-      background: #1c1c1c;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 255, 166, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.project p {
+  margin-top: 0.5rem;
+  color: #ccc;
+}
 
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(0, 255, 166, 0.3);
-    }
+.center-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 166, 0.05);
+}
 
-    .project h3 {
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
+footer {
+  background-color: #0d0d0d;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #222;
+  position: relative;
+  z-index: 10;
+}
 
-    .project p {
-      color: #ccc;
-      font-size: 0.95rem;
-    }
+/* SVG background styles */
+#bg-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0.15;
+  z-index: 1;
+  overflow: visible;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-      background: #121212;
-      margin-top: 3rem;
-    }
-  </style>
+/* Positioning groups inside SVG to be more to sides */
+#bg-svg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tags {
+  margin: 0.5rem 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tags span {
+  background-color: #0a4d3f; /* ciemniejszy, stonowany zielony */
+  color: #a6f4d2; /* jasna zieleń na tekst */
+  padding: 0.25rem 0.7rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  user-select: none;
+  box-shadow: 0 0 4px rgba(10, 77, 63, 0.6);
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.tags span:hover {
+  background-color: #14694f; /* ciemniejszy na hover */
+  cursor: default;
+}
