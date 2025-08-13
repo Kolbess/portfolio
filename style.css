@@ -135,3 +135,40 @@ footer {
   background-color: #14694f; /* ciemniejszy na hover */
   cursor: default;
 }
+
+a {
+  color: #00ffa6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #00ffa6;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  color: #00ffb0;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Click feedback animation */
+a:active {
+  color: #009f7a; /* darker shade of neon green */
+  transform: scale(0.97); /* slight shrink effect */
+  transition: color 0.1s ease, transform 0.1s ease;
+}
